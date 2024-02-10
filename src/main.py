@@ -12,6 +12,11 @@ HTMLDIR = os.path.abspath(
                  )
 )
 
+CSSDIR = os.path.abspath(
+    os.path.join(os.path.dirname(__file__),
+                 "..", "css")
+)
+
 def makeApp():
     endpoints=[]
     with open("src/users.csv") as csvfile:
@@ -31,10 +36,12 @@ def makeApp():
                     writer.writerow(row)
                 endpoints.append((f'/profile/{row["username"]}', ProfileTemplate.Handler, ))
                 newcsv.close()
-            endpoints.append(("/", Index.Handler))  # new
+            endpoints.append(("/", Index.Handler))
+
+
 
     app = tornado.web.Application(endpoints,
-                                  static_path=HTMLDIR
+                                  static_path=HTMLDIR, template_path=CSSDIR
                                   )
     app.listen(8000)
     return app

@@ -1,0 +1,35 @@
+
+body {
+    background: rgb(0,255,177);
+    background: linear-gradient(95deg, rgba(200,200,200,1) 0%, rgba(50,50,50,1) 100%);
+    font-family: Arial;
+}
+
+body .page {
+    background: rgba(255, 255, 255, .9);
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    padding: 5px 5px 5px 5px;
+}
+
+.box welcome {
+    flex: 0 0 95%;
+    background-color: rgba(255, 255, 255, .5);
+    background-clip: content-box;
+}
+
+.box info {
+    flex: 0 0 45%;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, .5);
+    background-clip: content-box;
+}
+
+.box info border {
+    border-bottom: solid;
+    border-bottom-width: thin;
+}

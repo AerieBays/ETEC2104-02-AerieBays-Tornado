@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Profile</title>
+<meta charset=utf8>
+<link rel="stylesheet" href="{{ static_url('example.css') }}">
+
+    <title>Info on informant</title>
 </head>
-<body>
+<body class="page">
 
-<h1>
-
-    Welcome back.
-
+<h1 class="box">
+    <welcome>
+    Welcome back, {{realname}}.
+    </welcome>
 </h1>
 
-<div style="border: 1px solid blue;">
+<div class="box">
+    <img src="{{ static_url('images') }}/{{username}}.png" alt="user profile picture" width="60px" height="60px">
 </div>
 
-<h2>Information for User <u><i>{{realname}}</i></u>:</h2>
-<p>Birthday: {{dob}}</p>
-<p>Email: {{email}}</p>
-<p>Online Alias(es): {{username}}</p>
+<div class="box">
+<info>
+    <h3><border>Birthday: {{dob}}</border></h3>
+    <h3><border>Email: {{email}}</border></h3>
+    <h3>Online Alias(es): {{username}}</h3>
+</info>
+</div>
+
 <h3>
 
     Stop the target.

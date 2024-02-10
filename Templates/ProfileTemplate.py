@@ -37,4 +37,5 @@ class Handler(tornado.web.RequestHandler):
             reader = csv.DictReader(newcsv)
             for row in reader:
                 user_dict = row
-        self.render("../html/TemplateTest.html", username=user_dict["username"], dob=user_dict["birthday"], email=user_dict["email"], realname=user_dict["name"])
+        self.render_linked_css(["../css/example.css"])
+        self.render("../html/TemplateTest.html", username=user_dict["username"], dob=user_dict["birthday"], email=user_dict["email"], realname=user_dict["name"], cssfile="../css/example.css")
